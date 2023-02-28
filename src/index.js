@@ -7,7 +7,7 @@ const matchProtocol = /^(?:[A-z]+:)?\/\//;
 // plugin
 const plugin = opts => ({
 	postcssPlugin: "postcss-advanced-variables",
-	Root(root, { result }) {
+	Once(root, { result }) {
 		// process options
 		const transformOpt = ['@content', '@each', '@else', '@if', '@include', '@import', '@for', '@mixin'].filter(
 			feature => !String(Object(opts).disable || '').split(/\s*,\s*|\s+,?\s*|\s,?\s+/).includes(feature)
